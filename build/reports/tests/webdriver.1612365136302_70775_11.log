@@ -1,0 +1,8 @@
+1612365136323	geckodriver	INFO	Listening on 127.0.0.1:31502
+1612365136348	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilee1et17"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1612365149391	Marionette	INFO	Listening on port 33355
+1612365149538	Marionette	WARN	TLS certificate errors will be ignored for this session
+1612365155576	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+JavaScript error: resource://devtools/client/jsonview/Sniffer.jsm, line 53: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsIChannel.contentType]
+1612365158481	Marionette	INFO	Stopped listening on port 33355

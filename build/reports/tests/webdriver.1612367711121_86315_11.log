@@ -1,0 +1,26 @@
+1612367711469	geckodriver	INFO	Listening on 127.0.0.1:8867
+1612367712128	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileZTrHE1"
+*** You are running in headless mode.
+
+(firefox:86369): GLib-GObject-WARNING **: 16:55:12.698: invalid (NULL) pointer instance
+
+(firefox:86369): GLib-GObject-CRITICAL **: 16:55:12.698: g_signal_connect_data: assertion 'G_TYPE_CHECK_INSTANCE (instance)' failed
+
+(/usr/lib/firefox/firefox:86610): GLib-GObject-WARNING **: 16:55:13.418: invalid (NULL) pointer instance
+
+(/usr/lib/firefox/firefox:86610): GLib-GObject-CRITICAL **: 16:55:13.419: g_signal_connect_data: assertion 'G_TYPE_CHECK_INSTANCE (instance)' failed
+
+(/usr/lib/firefox/firefox:86630): GLib-GObject-WARNING **: 16:55:13.633: invalid (NULL) pointer instance
+
+(/usr/lib/firefox/firefox:86630): GLib-GObject-CRITICAL **: 16:55:13.633: g_signal_connect_data: assertion 'G_TYPE_CHECK_INSTANCE (instance)' failed
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+
+(/usr/lib/firefox/firefox:86688): GLib-GObject-WARNING **: 16:55:15.503: invalid (NULL) pointer instance
+
+(/usr/lib/firefox/firefox:86688): GLib-GObject-CRITICAL **: 16:55:15.503: g_signal_connect_data: assertion 'G_TYPE_CHECK_INSTANCE (instance)' failed
+1612367715592	Marionette	INFO	Listening on port 35611
+1612367715736	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: , line 0: NotFoundError: No such JSWindowActor 'MarionetteEvents'
+1612367734371	Marionette	INFO	Stopped listening on port 35611

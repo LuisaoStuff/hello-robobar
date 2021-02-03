@@ -1,0 +1,8 @@
+com/example/Selenium_Idea/DevopsTest.java
+ com.example.Selenium_Idea.DevopsTest
+com/example/Selenium_Idea/RoboTest.java
+ com.example.Selenium_Idea.RoboTest
+com/example/Selenium_Idea/WandaVisionIMDBTest.java
+ com.example.Selenium_Idea.WandaVisionIMDBTest
+com/example/Selenium_Idea/MainPageTest.java
+ com.example.Selenium_Idea.MainPageTest

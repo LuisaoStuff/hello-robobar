@@ -1,0 +1,40 @@
+1612367080500	geckodriver	INFO	Listening on 127.0.0.1:4479
+1612367080540	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileR65Xfh"
+*** You are running in headless mode.
+
+(firefox:82602): GLib-GObject-WARNING **: 16:44:41.241: invalid (NULL) pointer instance
+
+(firefox:82602): GLib-GObject-CRITICAL **: 16:44:41.241: g_signal_connect_data: assertion 'G_TYPE_CHECK_INSTANCE (instance)' failed
+
+(/usr/lib/firefox/firefox:82647): GLib-GObject-WARNING **: 16:44:41.942: invalid (NULL) pointer instance
+
+(/usr/lib/firefox/firefox:82647): GLib-GObject-CRITICAL **: 16:44:41.942: g_signal_connect_data: assertion 'G_TYPE_CHECK_INSTANCE (instance)' failed
+
+(/usr/lib/firefox/firefox:82877): GLib-GObject-WARNING **: 16:44:42.259: invalid (NULL) pointer instance
+
+(/usr/lib/firefox/firefox:82877): GLib-GObject-CRITICAL **: 16:44:42.259: g_signal_connect_data: assertion 'G_TYPE_CHECK_INSTANCE (instance)' failed
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+
+(/usr/lib/firefox/firefox:82935): GLib-GObject-WARNING **: 16:44:44.568: invalid (NULL) pointer instance
+
+(/usr/lib/firefox/firefox:82935): GLib-GObject-CRITICAL **: 16:44:44.568: g_signal_connect_data: assertion 'G_TYPE_CHECK_INSTANCE (instance)' failed
+1612367084920	Marionette	INFO	Listening on port 40795
+1612367085009	Marionette	WARN	TLS certificate errors will be ignored for this session
+1612367101639	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:235:19
+TimedPromise@chrome://marionette/content/sync.js:220:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:418:10
+webdriverClickElement@chrome://marionette/content/interaction.js:179:31
+[63]</e</a.prototype.getLoggedInStatus@https://m.media-amazon.com/images/S/sash/ZKPkKL$tQP0sr9I.js:3:20975
+e@https://m.media-amazon.com/images/S/sash/ZKPkKL$tQP0sr9I.js:3:20370
+[708]</</b.imdb.WatchlistRibbon.prototype._checkWatchlist@https://m.media-amazon.com/images/S/sash/ZKPkKL$tQP0sr9I.js:84:5775
+[708]</</b.imdb.WatchlistRibbon.prototype._init@https://m.media-amazon.com/images/S/sash/ZKPkKL$tQP0sr9I.js:84:934
+[708]</</b.imdb.WatchlistRibbon@https://m.media-amazon.com/images/S/sash/ZKPkKL$tQP0sr9I.js:84:79
+[708]</</a.fn.watchlistRibbon@https://m.media-amazon.com/images/S/sash/ZKPkKL$tQP0sr9I.js:84:8392
+[10]</</<@https://m.media-amazon.com/images/S/sash/ZKPkKL$tQP0sr9I.js:1:7614
+l@https://m.media-amazon.com/images/S/sash/wDqcPWN-$punknn.js:94:25223
+f/</m<@https://m.media-amazon.com/images/S/sash/wDqcPWN-$punknn.js:94:25527
+1612367101853	Marionette	INFO	Stopped listening on port 40795
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+

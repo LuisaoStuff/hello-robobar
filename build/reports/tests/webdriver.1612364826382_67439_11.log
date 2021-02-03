@@ -1,0 +1,8 @@
+1612364826439	geckodriver	INFO	Listening on 127.0.0.1:24990
+1612364826495	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile2vjRZO"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1612364831412	Marionette	INFO	Listening on port 45751
+1612364831560	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://browser.sentry-cdn.com/5.7.1/bundle.min.js, line 2: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: resource://gre/modules/Sqlite.jsm, line 1031: Error: Sqlite.jsm has been shutdown. Cannot open connection to: /tmp/rust_mozprofile2vjRZO/protections.sqlite
+1612364835306	Marionette	INFO	Stopped listening on port 45751

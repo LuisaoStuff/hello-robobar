@@ -1,0 +1,12 @@
+1612364732605	geckodriver	INFO	Listening on 127.0.0.1:30877
+1612364732635	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile3AfF5v"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1612364737982	Marionette	INFO	Listening on port 35091
+1612364738094	Marionette	WARN	TLS certificate errors will be ignored for this session
+1612364746099	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+1612364760542	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:235:19
+TimedPromise@chrome://marionette/content/sync.js:220:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:418:10
+webdriverClickElement@chrome://marionette/content/interaction.js:179:31
+1612364766123	Marionette	INFO	Stopped listening on port 35091

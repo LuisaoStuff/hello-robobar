@@ -1,0 +1,28 @@
+1612368450481	geckodriver	INFO	Listening on 127.0.0.1:19457
+1612368450536	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileXavcR6"
+*** You are running in headless mode.
+
+(firefox:92495): GLib-GObject-WARNING **: 17:07:31.359: invalid (NULL) pointer instance
+
+(firefox:92495): GLib-GObject-CRITICAL **: 17:07:31.359: g_signal_connect_data: assertion 'G_TYPE_CHECK_INSTANCE (instance)' failed
+
+(/usr/lib/firefox/firefox:92680): GLib-GObject-WARNING **: 17:07:32.224: invalid (NULL) pointer instance
+
+(/usr/lib/firefox/firefox:92680): GLib-GObject-CRITICAL **: 17:07:32.224: g_signal_connect_data: assertion 'G_TYPE_CHECK_INSTANCE (instance)' failed
+
+(/usr/lib/firefox/firefox:92700): GLib-GObject-WARNING **: 17:07:32.503: invalid (NULL) pointer instance
+
+(/usr/lib/firefox/firefox:92700): GLib-GObject-CRITICAL **: 17:07:32.503: g_signal_connect_data: assertion 'G_TYPE_CHECK_INSTANCE (instance)' failed
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+
+(/usr/lib/firefox/firefox:92772): GLib-GObject-WARNING **: 17:07:36.802: invalid (NULL) pointer instance
+
+(/usr/lib/firefox/firefox:92772): GLib-GObject-CRITICAL **: 17:07:36.802: g_signal_connect_data: assertion 'G_TYPE_CHECK_INSTANCE (instance)' failed
+
+(/usr/lib/firefox/firefox:92771): GLib-GObject-WARNING **: 17:07:36.824: invalid (NULL) pointer instance
+
+(/usr/lib/firefox/firefox:92771): GLib-GObject-CRITICAL **: 17:07:36.824: g_signal_connect_data: assertion 'G_TYPE_CHECK_INSTANCE (instance)' failed
+1612368456993	Marionette	INFO	Listening on port 40159
+1612368457110	Marionette	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchTelemetry: "Expected to report URI for" "https://www.google.com/search?source=hp&ei=ScoaYKDuIOiLwbkPgP6zqAg&q=Devops&oq=Devops&gs_lcp=CgZwc3ktYWIQA1D_DFigDWDMDWgAcAB4AIABAIgBAJIBAJgBAKABAaoBB2d3cy13aXo&sclient=psy-ab&ved=0ahUKEwjgtqLJjM7uAhXoRTABHQD_DIUQ4dUDCAg&uact=5" "with ads but couldn't find the information"
+1612368463613	Marionette	INFO	Stopped listening on port 40159
