@@ -14,6 +14,16 @@ pipeline {
                     sh './gradlew test'
                 }
             }
+            post {
+                script {
+                    allure([
+                        includeProperties: false,
+                        jdk: 'openjdk-15.0.2',
+                        properties: [],
+                        reportBuildPolicy: 'ALWAYS',
+                        results: [[path: 'build/allure-results']]
+                ])
+            }
         }
     }
 }
