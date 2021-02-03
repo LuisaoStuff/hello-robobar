@@ -19,7 +19,7 @@ pipeline {
                     script {
                         allure([
                             includeProperties: false,
-                            jdk: 'openjdk-15.0.2',
+                            jdk: '',
                             properties: [],
                             reportBuildPolicy: 'ALWAYS',
                             results: [[path: 'build/allure-results']]
