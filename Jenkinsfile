@@ -12,7 +12,7 @@ pipeline {
             steps {
                 withGradle {
 //                    sh './gradlew test'
-                    sh './gradlew -Dgob.evn=FirefoxHeadless iT'
+                    sh './gradlew -Dgob.evn=firefoxHeadless iT'
                     sh './gradlew codenarcTest'
                 }
             }
