@@ -28,7 +28,7 @@ pipeline {
 //                            results: [[path: 'build/allure-results']]
 //                        ])
 //                    }
-/               }
+               }
             }
         }
     }
