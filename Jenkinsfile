@@ -27,15 +27,6 @@ pipeline {
                         reportName: 'Reportes',
                         ])
 */                        
-//                    script {
-//                        allure([
-//                            includeProperties: false,
-//                            jdk: '',
-//                            properties: [],
-//                            reportBuildPolicy: 'ALWAYS',
-//                            results: [[path: 'build/allure-results']]
-//                        ])
-//                    }
                }
             }
         }
