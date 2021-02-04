@@ -11,7 +11,7 @@ pipeline {
         stage('Test') {
             steps {
                 withGradle {
-                    sh './gradlew test'
+//                    sh './gradlew test'
                     sh './gradlew -Dgob.evn=FirefoxHeadless iT'
                     sh './gradlew codenarcTest'
                 }
