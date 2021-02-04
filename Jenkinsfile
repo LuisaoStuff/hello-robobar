@@ -14,19 +14,19 @@ pipeline {
                     sh './gradlew test'
                 }
             }
-            post {
-                always {
-                    script {
-                        allure([
-                            includeProperties: false,
-                            jdk: '',
-                            properties: [],
-                            reportBuildPolicy: 'ALWAYS',
-                            results: [[path: 'build/allure-results']]
-                        ])
-                    }
-                }
-            }
+//            post {
+//                always {
+//                    script {
+//                        allure([
+//                            includeProperties: false,
+//                            jdk: '',
+//                            properties: [],
+//                            reportBuildPolicy: 'ALWAYS',
+//                            results: [[path: 'build/allure-results']]
+//                        ])
+//                    }
+//                }
+//            }
         }
     }
 }
