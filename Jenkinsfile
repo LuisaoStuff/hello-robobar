@@ -12,10 +12,13 @@ pipeline {
             steps {
                 withGradle {
                     sh './gradlew test'
+                    sh './gradlew -Dgob.evn-FirefoxHeadless iT'
+                    sh './gradlew codenarcTest'
                 }
             }
-//            post {
-//                always {
+            post {
+                always {
+                    junit 'build/test-results/**/TEST-*.xml'
 //                    script {
 //                        allure([
 //                            includeProperties: false,
@@ -25,8 +28,8 @@ pipeline {
 //                            results: [[path: 'build/allure-results']]
 //                        ])
 //                    }
-//                }
-//            }
+/               }
+            }
         }
     }
 }
