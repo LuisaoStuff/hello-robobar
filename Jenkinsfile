@@ -19,6 +19,13 @@ pipeline {
             post {
                 always {
                     junit 'build/test-results/**/TEST-*.xml'
+                    publishHTML (target : [allowMissing: false,
+                        alwaysLinkToLastBuild: true,
+                        keepAll: true,
+                        reportDir: 'build/reports/codenarc',
+                        reportFiles: '*.html',
+                        reportName: 'Reportes',
+                        ])
 //                    script {
 //                        allure([
 //                            includeProperties: false,
