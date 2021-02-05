@@ -10,15 +10,6 @@ pipeline {
         BROWSER = 'firefox'
         HEADLESS_VALUE = 'false'
     }
-    @NonCPS
-    def multiple_tests(list) {
-        list.each { each ->
-            withGradle {
-                sh './gradlew test -Premote_server=${SERVER} -Pbrowser=${each} -Pheadless=${HEADLESS_VALUE}'
-            }
-        }
-    }
-
     stages {
         stage('Test') {
             steps {
@@ -38,3 +29,12 @@ pipeline {
         }
     }
 }
+
+@NonCPS
+    def multiple_tests(list) {
+        list.each { each ->
+            withGradle {
+                sh './gradlew test -Premote_server=${SERVER} -Pbrowser=${each} -Pheadless=${HEADLESS_VALUE}'
+            }
+        }
+    }
