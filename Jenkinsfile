@@ -15,15 +15,7 @@ pipeline {
         stage('Test') {
             steps {
 // Múltiples Pruebas
-//                multiple_tests(BROWSER_LIST)
-                script {
-                    def BROWSER_LIST = ['firefox', 'chrome', 'opera']
-                    for (int i = 0; i < BROWSER_LIST.size(); i++) {
-                        withGradle {
-                            sh './gradlew test -Premote_server=${SERVER} -Pbrowser=${BROWSER_LIST[i]} -Pheadless=${HEADLESS_VALUE}'
-                        }
-                    }
-                }
+                multiple_tests()
                 
 /* Solo una prueba
                 withGradle {
@@ -37,5 +29,13 @@ pipeline {
                }
             }
         }
+    }
+}
+
+def multiple_tests() {
+    withGradle {
+        sh './gradlew test -Premote_server=${SERVER} -Pbrowser=firefox -Pheadless=${HEADLESS_VALUE}'
+        sh './gradlew test -Premote_server=${SERVER} -Pbrowser=chrome -Pheadless=${HEADLESS_VALUE}'
+        sh './gradlew test -Premote_server=${SERVER} -Pbrowser=opera -Pheadless=${HEADLESS_VALUE}'
     }
 }
