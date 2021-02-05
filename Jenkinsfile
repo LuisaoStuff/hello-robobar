@@ -6,12 +6,15 @@ pipeline {
     }
     environment {
         HEADLESS_VALUE = 'false'
-        BROWSER = 'chrome'
+        BROWSER = 'firefox'
+        // Valor '\/\/' para ejecución local o valor '' para ejecución remota
+        LOCAL = '\/\/'
     }
     stages {
         stage('Test') {
             steps {
                 script {
+                    sed -e '/systemProperties\[\"selenide\.remote\"\]\ =\ "http:\/\/10\.250\.5\.20:4444\"/ s/^${LOCAL}*/${LOCAL}/' -i build.gradle
                     sh "sed -i 's/firefox/${BROWSER}/g' build.gradle"
                     sh "sed -i 's/false/${HEADLESS_VALUE}/g' build.gradle"
                 }
