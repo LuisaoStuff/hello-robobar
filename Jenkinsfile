@@ -16,6 +16,7 @@ pipeline {
             steps {
 // Múltiples Pruebas
 //                multiple_tests(BROWSER_LIST)
+                @NonCPS
                 for (int i = 0; i < list.size(); i++) {
                         withGradle {
                             sh './gradlew test -Premote_server=${SERVER} -Pbrowser=${list[i]} -Pheadless=${HEADLESS_VALUE}'
