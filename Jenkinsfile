@@ -1,11 +1,11 @@
 #!/usr/bin/env groovy
-
+BROWSER_LIST = ['firefox', 'chrome', 'opera']
 pipeline {
     agent any
     options {
         ansiColor('xterm')
     }
-    BROWSER_LIST = ['firefox', 'chrome', 'opera']
+    
     environment {
 	    SERVER = 'http://10.250.5.20:4444'
         BROWSER = 'firefox'
