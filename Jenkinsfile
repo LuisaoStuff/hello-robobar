@@ -1,40 +1,22 @@
 #!/usr/bin/env groovy
 pipeline {
-variableReplace(
-	configs: [
-		variablesReplaceConfig(
-			configs: [
-				variablesReplaceItemConfig( 
-					name: 'DATABASE_HOST',
-					value: 'localhost'
-				),
-				variablesReplaceItemConfig( 
-					name: 'DATABASE_NAME',
-					value: 'my_db'
-				),
-				variablesReplaceItemConfig( 
-					name: 'DATABASE_PORT',
-					value: '3306'
-				),
-				variablesReplaceItemConfig( 
-					name: 'DATABASE_PASSWORD',
-					value: '123456'
-				)
-			],
-			fileEncoding: 'UTF-8', 
-			filePath: 'database-config.php', 
-			variablesPrefix: '#{', 
-			variablesSuffix: '}#'
-            )]
-)
-
-    agent any
+        agent any
     options {
         ansiColor('xterm')
+    }
+    environment {
+        HEADLESS_VALUE = 'false'
+        BROWSER = 'firefox'        
     }
     stages {
         stage('Test') {
             steps {
+                script {
+                    //sh "sed '/systemProperties\[\"selenide\.remote\"\]\ =\ \"http:\/\/10\.250\.5\.20:4444\"/d' build.gradle"
+                    //sh "sed -e '/systemProperties\[\"selenide\.remote\"\]\ =\ "http:\/\/10\.250\.5\.20:4444\"/ s/^${LOCAL}*/${LOCAL}/' -i build.gradle"
+                    sh "sed -i 's/firefox/${BROWSER}/g' build.gradle"
+                    sh "sed -i 's/false/${HEADLESS_VALUE}/g' build.gradle"
+                }
                 withGradle {
                     sh './gradlew test'
 //                    sh './gradlew iT'
