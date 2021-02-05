@@ -8,8 +8,8 @@ pipeline {
         stage('Test') {
             steps {
                 withGradle {
-//                    sh './gradlew test'
-                    sh './gradlew iT'
+                    sh './gradlew test'
+//                    sh './gradlew iT'
 //                    sh './gradlew codenarcTest'
                 }
             }
