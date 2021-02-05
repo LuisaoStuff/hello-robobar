@@ -17,11 +17,12 @@ pipeline {
 // Múltiples Pruebas
 //                multiple_tests(BROWSER_LIST)
                 @NonCPS
-                for (int i = 0; i < list.size(); i++) {
-                        withGradle {
-                            sh './gradlew test -Premote_server=${SERVER} -Pbrowser=${list[i]} -Pheadless=${HEADLESS_VALUE}'
-                        }
+                list.each { each ->
+                    withGradle {
+                        sh './gradlew test -Premote_server=${SERVER} -Pbrowser=${each} -Pheadless=${HEADLESS_VALUE}'
+                    }
                 }
+
 /* Solo una prueba
                 withGradle {
                     sh './gradlew test -Premote_server=${SERVER} -Pbrowser=${BROWSER} -Pheadless=${HEADLESS_VALUE}'
