@@ -7,6 +7,9 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.core.IsNot.not;
 
 import com.codeborne.selenide.Configuration;
+import lombok.Value;
+import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -25,34 +28,33 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.Keys;
+
+import java.io.IOException;
+import java.text.MessageFormat;
 import java.util.*;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.concurrent.TimeUnit;
+
 public class WandaVisionIMDBTest {
-  private WebDriver driver;
+  static WebDriver driver;
   private Map<String, Object> vars;
   JavascriptExecutor js;
+
   @BeforeEach
-  public void setUp() {
-    /*
-    FirefoxOptions options = new FirefoxOptions();
-    options.setHeadless(true);
-    driver = new FirefoxDriver(options);
-    */
-    Configuration.startMaximized = true;
-    open("about:blank");
-    driver = getWebDriver();
+  public void setUp() throws MalformedURLException {
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
+    FirefoxOptions firefoxOptions = new FirefoxOptions();
+    driver = new RemoteWebDriver(new URL("http://localhost:4444"), firefoxOptions);
   }
-
 
   @AfterEach
-  public void tearDown() {
-    driver.quit();
-  }
+  public void tearDown() { driver.quit(); }
+
   @Test
   public void wandaVisionIMDB() {
+
     driver.get("https://www.imdb.com/");
     driver.findElement(By.id("suggestion-search")).click();
     driver.findElement(By.id("suggestion-search")).sendKeys("wandavision");
@@ -60,7 +62,7 @@ public class WandaVisionIMDBTest {
     WebElement wandaresult = new WebDriverWait(driver,10)
             .until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),\'WandaVision\')]")));
     driver.findElement(By.xpath("//a[contains(text(),\'WandaVision\')]")).click();
-    js.executeScript("window.scrollTo(0,741)");
+   // js.executeScript("window.scrollTo(0,741)");
     WebElement trivialink = new WebDriverWait(driver,10)
             .until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),\'TRIVIA\')]")));
     driver.findElement(By.xpath("//a[contains(text(),\'TRIVIA\')]")).click();

@@ -1,7 +1,6 @@
 plugins {
     id 'java'
     id 'io.qameta.allure' version '2.8.1'
-    id 'codenarc'
 }
 
 group 'com.example'
@@ -28,6 +27,8 @@ targetCompatibility = 1.8
 dependencies {
     implementation('com.codeborne:selenide:5.16.2')
     implementation 'junit:junit:4.12'
+    implementation 'org.projectlombok:lombok:1.18.16'
+    implementation 'org.projectlombok:lombok:1.18.16'
     testImplementation("io.qameta.allure:allure-selenide:${allureVersion}")
     testImplementation('org.hamcrest:hamcrest:2.2')
     testImplementation('org.slf4j:slf4j-simple:1.7.29')

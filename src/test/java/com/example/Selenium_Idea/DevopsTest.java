@@ -32,16 +32,19 @@ public class DevopsTest {
   private Map<String, Object> vars;
   JavascriptExecutor js;
   @BeforeEach
-  public void setUp() {
+  public void setUp() throws MalformedURLException {
     /*
     FirefoxOptions options = new FirefoxOptions();
     options.setHeadless(true);
     driver = new FirefoxDriver(options);
-    */
+
     Configuration.startMaximized = true;
     open("about:blank");
     driver = getWebDriver();
+     */
 
+    FirefoxOptions firefoxOptions = new FirefoxOptions();
+    driver = new RemoteWebDriver(new URL("http://localhost:4444"), firefoxOptions);
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
   }
@@ -52,7 +55,6 @@ public class DevopsTest {
   @Test
   public void devopsTest() {
     driver.get("https://www.google.com/");
-//    driver.manage().window().setSize(new Dimension(697, 702));
     driver.switchTo().frame(0);
     driver.findElement(By.cssSelector("#introAgreeButton")).click();
     driver.switchTo().defaultContent();

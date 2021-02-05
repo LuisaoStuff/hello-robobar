@@ -1,18 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.example.Selenium_Idea.RoboTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-02-03T16:07:15" hostname="ubuntu" time="14.583">
+<testsuite name="com.example.Selenium_Idea.RoboTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-02-05T09:49:13" hostname="ubuntu" time="14.776">
   <properties/>
-  <testcase name="RoboTest()" classname="com.example.Selenium_Idea.RoboTest" time="14.583"/>
+  <testcase name="RoboTest()" classname="com.example.Selenium_Idea.RoboTest" time="14.776"/>
   <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[[Test worker] INFO com.codeborne.selenide.impl.WebDriverThreadLocalContainer - No webdriver is bound to current thread: 11 - let's create a new webdriver
-[Test worker] INFO com.codeborne.selenide.impl.FileHelper - Creating folder: /home/viewadmin/gitlab/hello-robobar/build/downloads/1612368436134_92009_11
-[Test worker] INFO io.github.bonigarcia.wdm.WebDriverManager - Using geckodriver 0.29.0 (resolved driver for Firefox 84)
-[Test worker] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.gecko.driver as /home/viewadmin/.cache/selenium/geckodriver/linux64/0.29.0/geckodriver
-[Test worker] INFO com.codeborne.selenide.webdriver.AbstractDriverFactory - Write webdriver logs to: /home/viewadmin/gitlab/hello-robobar/build/reports/tests/webdriver.1612368437606_92009_11.log
-Feb 03, 2021 5:07:23 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+  <system-err><![CDATA[Feb 05, 2021 10:49:20 AM org.openqa.selenium.remote.ProtocolHandshake createSession
 INFO: Detected dialect: W3C
-[Test worker] INFO com.codeborne.selenide.webdriver.WebDriverFactory - BrowserName=firefox Version=84.0.2 Platform=LINUX
-[Test worker] INFO com.codeborne.selenide.webdriver.WebDriverFactory - Selenide v. 5.16.2
-[Test worker] INFO com.codeborne.selenide.webdriver.WebDriverFactory - Selenium WebDriver v. 3.141.59 build time: 2018-11-14T08:17:03
-[Test worker] INFO com.codeborne.selenide.drivercommands.CreateDriverCommand - Create webdriver in current thread 11: FirefoxDriver -> FirefoxDriver: firefox on LINUX (4bf2a583-4cfb-4a36-b68f-4807262ae4dd)
 ]]></system-err>
 </testsuite>
