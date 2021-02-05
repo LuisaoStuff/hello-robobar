@@ -38,8 +38,8 @@ dependencies {
 }
 
 test {
-    systemProperties["selenide.browser"] = "firefox"
-    systemProperties["selenide.headless"] = "true"
+//    systemProperties["selenide.browser"] = "firefox"
+//    systemProperties["selenide.headless"] = "true"
     useJUnitPlatform()
 }
 allure {
