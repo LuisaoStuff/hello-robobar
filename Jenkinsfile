@@ -7,7 +7,6 @@ pipeline {
     }
     
     environment {
-        def BROWSER_LIST = ['firefox', 'chrome', 'opera']
 	    SERVER = 'http://10.250.5.20:4444'
         BROWSER = 'firefox'
         HEADLESS_VALUE = 'false'
@@ -18,6 +17,7 @@ pipeline {
 // Múltiples Pruebas
 //                multiple_tests(BROWSER_LIST)
                 script {
+                    def BROWSER_LIST = ['firefox', 'chrome', 'opera']
                     for (int i = 0; i < BROWSER_LIST.size(); i++) {
                         withGradle {
                             sh './gradlew test -Premote_server=${SERVER} -Pbrowser=${BROWSER_LIST[i]} -Pheadless=${HEADLESS_VALUE}'
