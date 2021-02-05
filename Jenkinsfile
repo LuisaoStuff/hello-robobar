@@ -12,7 +12,7 @@ pipeline {
         stage('Test') {
             steps {
                 script {
-                    sh "sed '/systemProperties\[\"selenide\.remote\"\]\ =\ "http:\/\/10\.250\.5\.20:4444\"/d' build.gradle"
+                    sh "sed '/systemProperties\[\"selenide\.remote\"\]\ =\ \"http:\/\/10\.250\.5\.20:4444\"/d' build.gradle"
                     //sh "sed -e '/systemProperties\[\"selenide\.remote\"\]\ =\ "http:\/\/10\.250\.5\.20:4444\"/ s/^${LOCAL}*/${LOCAL}/' -i build.gradle"
                     sh "sed -i 's/firefox/${BROWSER}/g' build.gradle"
                     sh "sed -i 's/false/${HEADLESS_VALUE}/g' build.gradle"
