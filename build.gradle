@@ -40,7 +40,7 @@ dependencies {
 test {
     systemProperties["selenide.remote"] = "http://10.250.5.20:4444"
     systemProperties["selenide.browser"] = "firefox"
-//    systemProperties["selenide.headless"] = "true"
+    systemProperties["selenide.headless"] = "false"
     useJUnitPlatform()
 }
 allure {
