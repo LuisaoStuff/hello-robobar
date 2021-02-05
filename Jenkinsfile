@@ -4,28 +4,17 @@ pipeline {
     options {
         ansiColor('xterm')
     }
+    environment {
+        HEADLESS_VALUE = 'false'
+        BROWSER = 'chrome'
+    }
     stages {
         stage('Test') {
             steps {
-                variableReplace(
-                    configs: [
-                        variablesReplaceConfig(
-                            configs: [
-                                variablesReplaceItemConfig( 
-                                    name: 'systemProperties["selenide.browser"]',
-                                    value: 'chrome'
-                                ),
-                                variablesReplaceItemConfig( 
-                                    name: 'systemProperties["selenide.headless"]',
-                                    value: 'false'
-                                )
-                            ],
-//                            fileEncoding: 'UTF-8', 
-                            filePath: 'build.gradle',
-                            variablesPrefix: '"', 
-                            variablesSuffix: '"'
-                            )]
-                )
+                script {
+                    sh "sed -i 's/firefox/${BROWSER}/g' build.gradle"
+                    sh "sed -i 's/false/${HEADLESS_VALUE}/g' build.gradle"
+                }
                 withGradle {
                     sh './gradlew test'
 //                    sh './gradlew iT'
