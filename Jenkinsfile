@@ -6,7 +6,7 @@ pipeline {
     }
     environment {
 	SERVER = 'http://10.250.5.20:4444'
-        BROWSER = 'opera'
+        BROWSER = 'firefox'
         HEADLESS_VALUE = 'false'
     }
     stages {
