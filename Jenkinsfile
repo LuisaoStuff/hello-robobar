@@ -1,5 +1,5 @@
 #!/usr/bin/env groovy
-BROWSER_LIST = ['firefox', 'chrome', 'opera']
+
 pipeline {
     agent any
     options {
@@ -7,6 +7,7 @@ pipeline {
     }
     
     environment {
+        def BROWSER_LIST = ['firefox', 'chrome', 'opera']
 	    SERVER = 'http://10.250.5.20:4444'
         BROWSER = 'firefox'
         HEADLESS_VALUE = 'false'
@@ -16,13 +17,14 @@ pipeline {
             steps {
 // Múltiples Pruebas
 //                multiple_tests(BROWSER_LIST)
-                @NonCPS
-                list.each { each ->
-                    withGradle {
-                        sh './gradlew test -Premote_server=${SERVER} -Pbrowser=${each} -Pheadless=${HEADLESS_VALUE}'
+                script {
+                    for (int i = 0; i < BROWSER_LIST.size(); i++) {
+                        withGradle {
+                            sh './gradlew test -Premote_server=${SERVER} -Pbrowser=${BROWSER_LIST[i]} -Pheadless=${HEADLESS_VALUE}'
+                        }
                     }
                 }
-
+                
 /* Solo una prueba
                 withGradle {
                     sh './gradlew test -Premote_server=${SERVER} -Pbrowser=${BROWSER} -Pheadless=${HEADLESS_VALUE}'
@@ -37,20 +39,3 @@ pipeline {
         }
     }
 }
-/*
-//@NonCPS
-def multiple_tests(list) {
-    for (int i = 0; i < list.size(); i++) {
-        withGradle {
-            sh './gradlew test -Premote_server=${SERVER} -Pbrowser=${list[i]} -Pheadless=${HEADLESS_VALUE}'
-        }
-    }
-
-    list.each { each ->
-        withGradle {
-            sh './gradlew test -Premote_server=${SERVER} -Pbrowser=${each} -Pheadless=${HEADLESS_VALUE}'
-        }
-    }
-   
-}
-*/ 
