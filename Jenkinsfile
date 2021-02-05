@@ -1,32 +1,31 @@
 #!/usr/bin/env groovy
 pipeline {
-    variableReplace(
-        configs: [
-            variablesReplaceConfig(
-                configs: [
-                    variablesReplaceItemConfig( 
-                        name: 'systemProperties["selenide.browser"]',
-                        value: 'chrome'
-                    ),
-                    variablesReplaceItemConfig( 
-                        name: 'systemProperties["selenide.headless"]',
-                        value: 'false'
-                    )
-                ],
-                fileEncoding: 'UTF-8', 
-                filePath: 'build.gradle',
-                variablesPrefix: '"', 
-                variablesSuffix: '"'
-                )]
-    )
-
-    agent any
+        agent any
     options {
         ansiColor('xterm')
     }
     stages {
         stage('Test') {
             steps {
+                variableReplace(
+                    configs: [
+                        variablesReplaceConfig(
+                            configs: [
+                                variablesReplaceItemConfig( 
+                                    name: 'systemProperties["selenide.browser"]',
+                                    value: 'chrome'
+                                ),
+                                variablesReplaceItemConfig( 
+                                    name: 'systemProperties["selenide.headless"]',
+                                    value: 'false'
+                                )
+                            ],
+                            fileEncoding: 'UTF-8', 
+                            filePath: 'build.gradle',
+                            variablesPrefix: '"', 
+                            variablesSuffix: '"'
+                            )]
+                )
                 withGradle {
                     sh './gradlew test'
 //                    sh './gradlew iT'
