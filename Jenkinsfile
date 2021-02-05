@@ -49,5 +49,6 @@ def multiple_tests(list) {
             sh './gradlew test -Premote_server=${SERVER} -Pbrowser=${each} -Pheadless=${HEADLESS_VALUE}'
         }
     }
-*/    
+   
 }
+*/ 
