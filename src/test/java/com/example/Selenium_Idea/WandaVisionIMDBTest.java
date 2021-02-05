@@ -43,10 +43,12 @@ public class WandaVisionIMDBTest {
 
   @BeforeEach
   public void setUp() throws MalformedURLException {
+    Configuration.startMaximized = true;
+    open("about:blank");
+    driver = getWebDriver();
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
-    FirefoxOptions firefoxOptions = new FirefoxOptions();
-    driver = new RemoteWebDriver(new URL("http://localhost:4444"), firefoxOptions);
+
   }
 
   @AfterEach

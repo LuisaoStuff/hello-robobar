@@ -27,18 +27,16 @@ public class RoboTest {
   private Map<String, Object> vars;
   JavascriptExecutor js;
   @BeforeEach
-  public void setUp() throws MalformedURLException {
+  public void setUp() {
 /*
     FirefoxOptions options = new FirefoxOptions();
     options.setHeadless(true);
     driver = new FirefoxDriver(options);
-
+ */
     Configuration.startMaximized = true;
     open("about:blank");
     driver = getWebDriver();
-*/
-    FirefoxOptions firefoxOptions = new FirefoxOptions();
-    driver = new RemoteWebDriver(new URL("http://localhost:4444"), firefoxOptions);
+
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
   }

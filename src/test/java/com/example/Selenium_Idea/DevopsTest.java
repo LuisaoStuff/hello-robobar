@@ -32,26 +32,26 @@ public class DevopsTest {
   private Map<String, Object> vars;
   JavascriptExecutor js;
   @BeforeEach
-  public void setUp() throws MalformedURLException {
+  public void setUp() {
     /*
     FirefoxOptions options = new FirefoxOptions();
     options.setHeadless(true);
     driver = new FirefoxDriver(options);
+     */
 
     Configuration.startMaximized = true;
     open("about:blank");
     driver = getWebDriver();
-     */
 
-    FirefoxOptions firefoxOptions = new FirefoxOptions();
-    driver = new RemoteWebDriver(new URL("http://localhost:4444"), firefoxOptions);
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
   }
+
   @AfterEach
   public void tearDown() {
     driver.quit();
   }
+
   @Test
   public void devopsTest() {
     driver.get("https://www.google.com/");
@@ -60,14 +60,9 @@ public class DevopsTest {
     driver.switchTo().defaultContent();
     driver.findElement(By.name("q")).sendKeys("Devops");
     driver.findElement(By.name("q")).sendKeys(Keys.ENTER);
-    js.executeScript("window.scrollTo(0,338)");
+    js.executeScript("window.scrollTo(0,388)");
     WebElement firstResult = new WebDriverWait(driver,10)
-            .until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(.,\'DevOps - Wikipedia, la enciclopedia libre\')]")));
-    driver.findElement(By.xpath("//span[contains(.,\'DevOps - Wikipedia, la enciclopedia libre\')]")).click();
-    {
-      WebElement element = driver.findElement(By.linkText("desarrollo de software"));
-      Actions builder = new Actions(driver);
-      builder.moveToElement(element).perform();
-    }
+            .until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(.,\'Qué es DevOps (y sobre todo qué no es DevOps) - Paradigma\')]")));
+    driver.findElement(By.xpath("//span[contains(.,\'Qué es DevOps (y sobre todo qué no es DevOps) - Paradigma\')]")).click();
   }
 }
