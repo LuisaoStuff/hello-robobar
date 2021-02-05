@@ -20,7 +20,7 @@ pipeline {
                                     value: 'false'
                                 )
                             ],
-                            fileEncoding: 'UTF-8', 
+//                            fileEncoding: 'UTF-8', 
                             filePath: 'build.gradle',
                             variablesPrefix: '"', 
                             variablesSuffix: '"'
