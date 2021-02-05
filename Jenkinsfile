@@ -32,11 +32,18 @@ pipeline {
     }
 }
 
-@NonCPS
-    def multiple_tests(list) {
-        list.each { each ->
-            withGradle {
-                sh './gradlew test -Premote_server=${SERVER} -Pbrowser=${each} -Pheadless=${HEADLESS_VALUE}'
-            }
+//@NonCPS
+def multiple_tests(list) {
+    for (int i = 0; i < list.size(); i++) {
+        withGradle {
+            sh './gradlew test -Premote_server=${SERVER} -Pbrowser=${list[i]} -Pheadless=${HEADLESS_VALUE}'
         }
     }
+/*
+    list.each { each ->
+        withGradle {
+            sh './gradlew test -Premote_server=${SERVER} -Pbrowser=${each} -Pheadless=${HEADLESS_VALUE}'
+        }
+    }
+*/    
+}
