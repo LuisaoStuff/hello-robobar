@@ -1,32 +1,24 @@
 #!/usr/bin/env groovy
 pipeline {
-variableReplace(
-	configs: [
-		variablesReplaceConfig(
-			configs: [
-				variablesReplaceItemConfig( 
-					name: 'DATABASE_HOST',
-					value: 'localhost'
-				),
-				variablesReplaceItemConfig( 
-					name: 'DATABASE_NAME',
-					value: 'my_db'
-				),
-				variablesReplaceItemConfig( 
-					name: 'DATABASE_PORT',
-					value: '3306'
-				),
-				variablesReplaceItemConfig( 
-					name: 'DATABASE_PASSWORD',
-					value: '123456'
-				)
-			],
-			fileEncoding: 'UTF-8', 
-			filePath: 'database-config.php', 
-			variablesPrefix: '#{', 
-			variablesSuffix: '}#'
-            )]
-)
+    variableReplace(
+        configs: [
+            variablesReplaceConfig(
+                configs: [
+                    variablesReplaceItemConfig( 
+                        name: 'systemProperties["selenide.browser"]',
+                        value: 'chrome'
+                    ),
+                    variablesReplaceItemConfig( 
+                        name: 'systemProperties["selenide.headless"]',
+                        value: 'false'
+                    )
+                ],
+                fileEncoding: 'UTF-8', 
+                filePath: 'build.gradle',
+                variablesPrefix: '"', 
+                variablesSuffix: '"'
+                )]
+    )
 
     agent any
     options {
