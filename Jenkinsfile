@@ -1,9 +1,6 @@
 #!/usr/bin/env groovy
 pipeline {
     agent any
-    tools {
-        jdk 'openjdk-15.0.2'
-    }
     options {
         ansiColor('xterm')
     }
@@ -12,7 +9,7 @@ pipeline {
             steps {
                 withGradle {
 //                    sh './gradlew test'
-                    sh './gradlew -Dgob.evn=firefoxHeadless iT'
+                    sh './gradlew iT'
 //                    sh './gradlew codenarcTest'
                 }
             }
