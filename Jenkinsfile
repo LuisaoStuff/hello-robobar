@@ -10,7 +10,7 @@ pipeline {
         BROWSER = 'firefox'
         HEADLESS_VALUE = 'false'
     }
-    def multiple_tests(BROWSER_LIST) {
+    multiple_tests(BROWSER_LIST) {
         BROWSER_LIST.each { EACH_BROWSER ->
             withGradle {
                 sh './gradlew test -Premote_server=${SERVER} -Pbrowser=${EACH_BROWSER} -Pheadless=${HEADLESS_VALUE}'
