@@ -6,14 +6,14 @@ pipeline {
     }
     environment {
 	SERVER = 'http://10.250.5.20:4444'
-	BROWSER_LIST = [ 'firefox', 'chrome', 'opera']
+	BROWSER_LIST = [ 'firefox', 'chrome', 'opera' ]
         BROWSER = 'firefox'
         HEADLESS_VALUE = 'false'
     }
-    multiple_tests(BROWSER_LIST) {
-        BROWSER_LIST.each { EACH_BROWSER ->
+    multiple_tests(list) {
+        list.each { each ->
             withGradle {
-                sh './gradlew test -Premote_server=${SERVER} -Pbrowser=${EACH_BROWSER} -Pheadless=${HEADLESS_VALUE}'
+                sh './gradlew test -Premote_server=${SERVER} -Pbrowser=${each} -Pheadless=${HEADLESS_VALUE}'
             }
         }
     }
