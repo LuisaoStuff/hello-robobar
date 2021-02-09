@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('trivy') {
             steps {
-                sh 'trivy fs --format json --output repo-sec.json'
+                sh 'trivy fs --format json --output repo-sec.json .'
             }        
             post {
                 always {
